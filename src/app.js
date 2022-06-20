@@ -2,6 +2,9 @@
     //variable
 
     //events
+    window.addEventListener('DOMContentLoaded', () => {
+
+    })
 
     //method
     
@@ -13,6 +16,29 @@
             console.log(data);
         })
         .catch(err => console.error(err));
+    }
+
+    //create recipe post
+    const recipes = (dt) => {
+
+        let output = '';
+
+        output += `
+                    <div class ="recipes">
+                        <div class  = "recipe">
+                            <img src = ${dt} alt="recipe" width="300px">
+                            <h5> ${dt} </h5>
+                            <p> ${dt} </p>
+                            <div class =ctrls>
+                                <span class = "like"> Like </span>
+                                <input type="button" value ="read more" />
+                            </div>
+                        </div>
+
+                    </div>
+                `
+        
+        //update dom output
     }
     
 })();
