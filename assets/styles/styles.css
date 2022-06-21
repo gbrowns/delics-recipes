@@ -53,7 +53,6 @@ body, .container {
   font-size: 1.2rem;
   padding: 0.5rem 1rem;
   text-transform: capitalize;
-  height: 4vh;
   overflow-y: hidden;
 }
 .recipes .recipe p {
@@ -61,7 +60,7 @@ body, .container {
   font-size: 1.1rem;
   padding: 0 1rem;
   line-height: 1.8rem;
-  height: 4vh;
+  height: 3vh;
   color: rgb(6, 6, 32);
   overflow-y: hidden;
 }
