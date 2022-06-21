@@ -19,12 +19,10 @@
             //console.log(data);
             data.forEach( elem => {
                 elem.recipes.forEach(recipe => {
-                    console.log(recipe);
+                   // console.log(recipe);
                     recipes(recipe);
                 });
-                
-
-            })
+            });
             
         })
         .catch(err => console.error(err));
@@ -34,25 +32,21 @@
     const recipes = (rc) => {
         let demo = document.getElementById("demo");
         let output = '';
-        //console.log(demo)
+        console.log(rc)
 
-        output += `
-                    <div class ="recipes">
-                        <div class  = "recipe">
-                            <img src = ${rc.desc} alt="recipe" width="300px">
+        demo.innerHTML = `
+                    
+                            <img src = ${rc.img} alt="recipe" width="300px">
                             <h5> ${rc.title} </h5>
                             <p> ${rc.desc} </p>
                             <div class =ctrls>
                                 <span class = "like"> Like </span>
                                 <input type="button" value ="read more" />
                             </div>
-                        </div>
-
-                    </div>
+                        
                 `
-        
         //update dom output
-        demo.innerHTML = output;
+        //demo.innerHTML = output;
     }
     
 })();
