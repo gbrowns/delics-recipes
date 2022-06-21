@@ -1,12 +1,12 @@
 (function(){
     //variable
+     let demo = document.getElementById("demo");
 
     //events
     window.addEventListener('DOMContentLoaded', () => {
         //document.querySelector("#demo")
         console.log("connected");
         fetchData(); //start fetch data
-
     })
 
     //method
@@ -18,35 +18,39 @@
         .then(data => {
             //console.log(data);
             data.forEach( elem => {
-                elem.recipes.forEach(recipe => {
-                   // console.log(recipe);
-                    recipes(recipe);
-                });
+                console.log(elem.recipes);
+
+                recipes(elem.recipes)
             });
             
         })
         .catch(err => console.error(err));
     }
 
-    //create recipe post
-    const recipes = (rc) => {
-        let demo = document.getElementById("demo");
-        let output = '';
-        console.log(rc)
+    //create recipe component and update on dom
+    function recipes(recipes) {
 
-        demo.innerHTML = `
-                    
-                            <img src = ${rc.img} alt="recipe" width="300px">
-                            <h5> ${rc.title} </h5>
-                            <p> ${rc.desc} </p>
+        let output = '';
+        //map the output
+        recipes.map(recipe => {
+            output += `
+                    <div class ="recipes">
+                        <div class  = "recipe">
+                            <img src = ${recipe.img} alt="recipe" width="300px">
+                            <h5> ${recipe.title} </h5>
+                            <p> ${recipe.desc} </p>
                             <div class =ctrls>
-                                <span class = "like"> Like </span>
-                                <input type="button" value ="read more" />
+                                <span class = "like" id = "like"> ${recipe.likes}:likes </span>
+                                <input type="button" value ="read more" id="read-btn" />
                             </div>
-                        
-                `
+                        </div>
+
+                    </div>
+                `;
+
+        });
         //update dom output
-        //demo.innerHTML = output;
+       return demo.innerHTML = output;
     }
     
 })();
