@@ -93,4 +93,5 @@ body, .container {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */
