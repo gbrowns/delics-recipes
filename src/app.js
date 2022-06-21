@@ -34,18 +34,18 @@
         //map the output
         recipes.map(recipe => {
             output += `
-                    <div class ="recipes">
-                        <div class  = "recipe">
-                            <img src = ${recipe.img} alt="recipe" width="300px">
-                            <h5> ${recipe.title} </h5>
-                            <p> ${recipe.desc} </p>
-                            <div class =ctrls>
-                                <span class = "like" id = "like"> ${recipe.likes}:likes </span>
-                                <input type="button" value ="read more" id="read-btn" />
-                            </div>
+                    
+                    <div class  = "recipe">
+                        <img src = ${recipe.img} alt="recipe" width="300px">
+                        <h5> ${recipe.title} </h5>
+                        <p> ${recipe.desc} </p>
+                        <div class =ctrls>
+                            <span class = "like" id = "like"> ${recipe.likes}:likes </span>
+                            <input type="button" value ="read more" id="read-btn" />
                         </div>
-
                     </div>
+
+                   
                 `;
 
         });
