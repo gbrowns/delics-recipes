@@ -23,7 +23,7 @@ body, .container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1.5rem;
-    margin: 0 16rem;
+    margin: 0 10rem;
     .recipe{
         position: relative;
         border-radius: 10px;
@@ -51,7 +51,7 @@ body, .container{
             font-size: 1.2rem;
             padding: .5rem 1rem;
             text-transform: capitalize;
-           
+         
             overflow-y: hidden;
         }
         p{
