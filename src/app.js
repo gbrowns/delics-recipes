@@ -84,6 +84,7 @@
                 data.forEach(elem => {
                     console.log(elem.recipes);
                     recipes(elem.recipes)
+                    detailed_recipe(elem.recipes);
                 });
 
             })
@@ -159,7 +160,7 @@
                         <div class =ctrls>
                             <i class="fal fa-heart"> ${recipe.likes} likes</i>
                             <i class="fal fa-comment"> ${recipe.comment} comments </i>
-                            <input type="button" value ="read more" id="read-btn" />
+                            <input type="button" value ="read more" id="read-btn" onclick= ${"showFullRecipe()"}/>
                         </div>
                     </div>
                    
