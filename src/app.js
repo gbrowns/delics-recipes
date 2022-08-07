@@ -1,8 +1,10 @@
 (function () {
 
     //variable
+    const RECIPE_API = "https://api.json-generator.com/templates/dkGUFM9yecgO/data?access_token=8ziyqp1pbfk3vid625oroxgvsh5yzzb7m9lqcadk";
     let section = document.getElementById("recipe");
     let forms = document.querySelectorAll("form");
+    let RECIPES;
 
 
     //events
@@ -48,10 +50,10 @@
 
                     fetchData(); //start fetch data
 
-                    //handle click for read more button
+                    /*handle click for read more button
                     document.getElementById('read-btn').addEventListener('click', () => {
                         console.log("read more btn");
-                    });
+                    });*/
 
                 }
 
@@ -76,15 +78,15 @@
 
     //fetch data --api
     function fetchData() {
-        fetch(`https://api.json-generator.com/templates/dkGUFM9yecgO/data?access_token=8ziyqp1pbfk3vid625oroxgvsh5yzzb7m9lqcadk`)
+        fetch(RECIPE_API)
             .then(status)
             .then(response => response.json())
             .then(data => {
                 //console.log(data);
                 data.forEach(elem => {
-                    console.log(elem.recipes);
+                    //console.log(elem.recipes);
+                    RECIPES = elem.recipes;
                     recipes(elem.recipes)
-                    detailed_recipe(elem.recipes);
                 });
 
             })
@@ -137,12 +139,14 @@
 
 
     //function to load detailed recipe
-    function detailed_recipe(recipes) {
+    function fullRecipe() {
+        console.log("clicked recipe");
         let output = ''
 
+        console.log(RECIPES);
         //LOGIC
 
-        return
+        return section.textContent = output;
     }
 
 
@@ -151,6 +155,7 @@
         let output = '';
         //map the output
         recipes.map(recipe => {
+
             output += `
                    
                     <div class  = "recipe">
@@ -160,7 +165,7 @@
                         <div class =ctrls>
                             <i class="fal fa-heart"> ${recipe.likes} likes</i>
                             <i class="fal fa-comment"> ${recipe.comment} comments </i>
-                            <input type="button" value ="read more" id="read-btn" onclick= ${"showFullRecipe()"}/>
+                            <input type="button" value ="read more" id="read-btn" onClick= ""/>
                         </div>
                     </div>
                    
