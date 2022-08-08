@@ -1,2 +1,5 @@
-
+@use './devices' as *;
 //large mobile
+@media screen and (max-width: $lg-mobile){
+    
+}
