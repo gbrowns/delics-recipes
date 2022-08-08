@@ -49,6 +49,8 @@
             right: 0;
             z-index: 5;
             width: $width;
+            border-radius: 0px 0px 5px 5px;
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.253);
             .ctrl{
                 border: 1px solid rgba(0, 0, 0, 0.507);
                 position: relative;
@@ -109,26 +111,29 @@
             }
             .overlay{
                 @include bg-attachment;
-                background-color: rgba(0, 0, 0, 0.5);
+                background-color: rgba(0, 0, 0, 0.329);
             }
             
             .content{
                 position: relative;
                 z-index: 5;
-                color: $theme-light;
-                margin-top: 10vh;
+                color: $white;
+                margin: 0 1rem;
                 @include flex-col;
                 justify-content: center;
                 align-items: center;
                 margin-bottom: 3rem;
                 span{
                     font-family: 'Dancing Script', cursive;
-                    font-size: 1.5rem;
+                    font-size: 1.8rem;
                 }
                 h1{
                     font-size: 4rem;
                     text-transform: uppercase;
                     font-weight: bold;
+                }
+                p{
+                    text-align: center;
                 }
             }
         }
@@ -141,7 +146,6 @@
         @include set-display(grid);
         grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
         .top{
-            border: 1px solid;
             position: relative;
             @include flex-col;
             justify-content: center;
@@ -172,6 +176,11 @@
                     align-items: space-evenly;
                     .icon{
                         @include icon-style(.4rem, .5rem, 1.2rem);
+                        transition: all 0.4s ease-in-out;
+                        &:hover{
+                            transition: all 0.4s ease-in-out;
+                            color: rgb(212, 184, 20)
+                        }
                     }
                 }
             }
