@@ -7,6 +7,23 @@
     background-color: $bg-color;
 }
 
+//background attachment styles
+@mixin bg-attachment{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+} 
+
+//icons
+@mixin icon-style($margin-l, $padding, $size){
+    font-size: $size;
+    color: $theme-light;
+    padding: 0 $padding;
+    cursor: pointer;
+    margin-left: $margin-l;
+}
 //display set
 @mixin set-display($display){
     display: $display;
