@@ -1,0 +1,9 @@
+
+//button styles
+@mixin btn-style($width, $color, $bg-color, $radius){
+    border-radius: $radius;
+    color: $color;
+    width: $width;
+    background-color: $bg-color;
+}
+

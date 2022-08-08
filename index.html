@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Poppins:wght@300&display=swap"
+        rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
         integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -21,12 +25,25 @@
                 <span>True Delics</span>
             </div>
             <div class="navlinks">
-                <a href="#" class="control active-btn" data-id="home">Home</a>
-                <a href="#" class="control" data-id="recipe">Recipes</a>
-                <a href="#" class="control" data-id="contact">Contact us</a>
+                <div class="links">
+                    <a href="#" class="control active-btn" data-id="home">Home</a>
+                    <a href="#" class="control" data-id="recipe">Recipes</a>
+                    <a href="#" class="control" data-id="contact">Contact us</a>
+                </div>
+                <div class="btns">
+                    <div class="fav">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Favorite</span>
+                    </div>
+                    <div class="add">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Create</span>
+                    </div>
+                </div>
             </div>
             <div class="menu" style="display: none;">
                 <i class="fa fa-bars" id="menu" d></i>
+                <i class="fa-solid fa-xmark"></i>
             </div>
         </header>
 
@@ -34,19 +51,15 @@
         <!--section-->
         <section class="sec">
             <!--Home section page-->
-            <div class="home sec1" id="home">
-                <div class="side1">
-                    <h1>Explore a variety of recipes</h1>
-                    <p>
-                        Recipe app procides with a variety of recipes to explore and try out with a detailed
-                        step-by-step procedure and an outline of all the necessary ingridients.
-                    </p>
-                    <button id="explore">Find recipe</button>
+            <div class="home " id="home">
+                <img src="" alt="ft-img">
+                <div class="overlay"></div>
+                <div class="content">
+                    <span>Get ready to</span>
+                    <h1>Spice it Up</h1>
+                    <p>Get the best and latest editions of the new recipes in the market</p>
                 </div>
-                <div class="side2">
-                    <img src="./assets/images/undraw_cooking_lyxy.svg" alt="img" width="200px">
-                </div>
-
+               
             </div>
 
             <!--recipe page--
@@ -83,33 +96,28 @@
                 <div class="content">
                     <h1>Stay in Touch</h1>
                     <div class="icons">
-                        
+                        <div class="icon">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-youtube"></i>
+                            <i class="fa-brands fa-tiktok"></i>
+                            <i class="fa-solid fa-at"></i>
+                        </div>
                     </div>
                 </div>
 
             </div>
             <div class="bottom">
-
-            </div>
-            <div class="footlinks">
-                <div class="link1">
-                    <span>Contact us</span>
-                    <div class="icons">
-                        <i id="icon" class="fab fa-facebook"></i>
-                        <i id="icon" class="fab fa-twitter"></i>
-                        <i id="icon" class="fas fa-rss"></i>
-                    </div>
+                <div class="btm-links">
+                    <a href="#" class="control active-btn" data-id="home">Home</a>
+                    <a href="#" class="control" data-id="recipe">Recipes</a>
+                    <a href="#" class="control" data-id="contact">Contact us</a>
                 </div>
-                <div class="link2">
-                    <span>More Links</span>
-                    <a href="">support</a>
-                    <a href="">privacy</a>
-                    <a href="">Terms of Use</a>
-                    <a href="">Licence</a>
+                <div class="copyright">
+                    <span>&copy;True Delics 2022 | <i>made by Brown</i></span>
                 </div>
             </div>
-            <span onclick="fullRecipe()" class="copyright"><i class="fas fa-copyright"></i> 2022 | All rights reserved | <b>made by Brown</b>
-            </span>
         </footer>
     </div>
     <!--recipe---
