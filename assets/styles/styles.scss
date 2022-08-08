@@ -1,22 +1,147 @@
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;;
 }
 
-body, .container{
+body, .banner{
     height: 100vh;
     width: 100vw;
     background-color: rgb(248, 246, 246);
 }
 
-.head-title{
-    position: relative;
-    text-align: center;
-    font-size: 2rem;
-    padding: 3rem 0;
-    color: rgb(35, 6, 63);
+header{
+    position: fixed;
+    height: 10vh;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.274);
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around; 
+    align-items: center;
+    .logo{
+        span{
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+        }
+    }  
+
+    .navlinks{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .far-bars{
+            display: none;
+            color: red;
+        }
+        a{
+            text-decoration: none;
+            color: rgb(37, 17, 70);
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease-in-out;
+            &:hover{
+                color: rgb(121, 145, 16);
+            }
+        }
+    }
+
+    form{
+        position: relative;
+        border: 1px solid rgb(31, 17, 54);
+        border-radius: 30px;
+        input{
+            border: none;
+            background-color: transparent;
+            outline: none;
+            font-size: 1rem;
+            color: rgb(7, 7, 22);
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease-in-out;
+            padding: .6rem 1rem;
+        }
+    }
 }
+
+
+section{
+    position: relative;
+    top: 10vh;
+    height: 90vh;
+    .home{
+        position: relative;
+        display: flex;
+        flex-direction: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        .side1{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            border: 1px solid;
+            height: 90vh;
+            margin-left: 15rem;
+            h1{
+                font-size: 3rem;
+                font-weight: bold;
+                color: rgb(0, 0, 0);
+                padding: 1.5rem 0;
+            }
+            p{
+                font-size: 1.3rem;
+                color: rgb(0, 0, 0);
+                line-height: 1.8;
+                padding-bottom: 1rem;
+            }
+            button{
+                position: relative;
+                border: none;
+                border-radius: 30px;
+                background-color: rgb(236, 240, 17);
+                color: rgb(0, 0, 0);
+                font-size: 1.2rem;
+                font-weight: bold;
+                padding: 0.5rem 1rem;
+                transition: all 0.3s ease-in-out;
+                &:hover{
+                    background: none;
+                    color: rgb(0, 0, 0);
+                }
+            }
+        }
+        .side2{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid;
+            height: 90vh;
+            margin-right: 15rem;
+            img{
+              width: 70%;
+              object-fit: cover;
+            }
+            
+        }
+    }
+
+    .recip-title{
+        display: none;
+    }
+}
+
+
+
 
 .recipes{
     position: relative;
@@ -99,5 +224,33 @@ body, .container{
                 cursor: pointer;
             }
         }
+    }
+}
+
+footer{
+    position: relative;
+    height: 10vh;
+    background-color: rgb(10, 34, 13);
+    bottom: 0;
+}
+
+
+//responsive design
+@media screen and (max-width: 425px){
+    header{
+        .navlinks{
+            display: none;
+        }
+        form{
+            display: none;
+        }
+        .logo{
+            span{
+                font-size: 2rem;
+            }
+        }
+    }
+    .recipes{
+        grid-template-columns: repeat(2, 1fr);
     }
 }
