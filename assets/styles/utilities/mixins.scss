@@ -1,4 +1,4 @@
-
+@use './colors' as *;
 //button styles
 @mixin btn-style($width, $color, $bg-color, $radius){
     border-radius: $radius;
@@ -7,3 +7,27 @@
     background-color: $bg-color;
 }
 
+//display set
+@mixin set-display($display){
+    display: $display;
+}
+
+@mixin flex-col{
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+//nav link mixins
+@mixin navlinks{
+    text-decoration: none;
+}
+
+@mixin hover-links-mb{
+    transition: all 0.4s ease-in-out;
+    background-color: $theme;
+}

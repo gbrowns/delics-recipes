@@ -1,5 +1,93 @@
 @use './devices' as *;
+@use './variables' as *;
+@use './colors' as *;
+@use 'mixins' as *;
 //large mobile
 @media screen and (max-width: $lg-mobile){
+    body, .banner{
+        width: $width;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        background-color: rgb(95, 89, 89);
+        align-items: center;
+        justify-content: center;
+        height: 10vh;
+        .logo{
+            span{
+                font-size: 2rem;
+                font-weight: bold;
+                color: $theme;
+                span{
+                    color: $black;
+                }
+            }
+        }
+        .menu{
+            position: absolute;
+            right: 2rem;
+            .ctrl{
+                font-size: 1.5rem;
+                cursor: pointer;
+                &:nth-child(2){
+                    @include set-display(none)
+                }
+            }
+        }
+        .navlinks{
+            position: absolute;
+            @include set-display(none);
+            flex-direction: column;
+            background-color: $white;
+            top: 0;
+            right: 0;
+            z-index: 5;
+            width: $width;
+            .ctrl{
+                border: 1px solid rgba(0, 0, 0, 0.507);
+                position: relative;
+                right: 0;
+                top: 0;
+                padding: 1rem 0;
+                font-size: 1.3rem;
+                text-align: right;
+                cursor: pointer;
+            }
+            .links{
+                @include flex-col;
+                a{
+                    text-decoration: none;
+                    color: $black;
+                    padding: 1rem 1rem;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+                    cursor: pointer;
+                    &:hover{
+                        @include hover-links-mb;
+                    }
+                }
+
+            }
+            .btns{
+                @include flex-col;
+                .btn{
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+                    padding: 1rem 1rem;
+                    cursor: pointer;
+                    &:hover{
+                        @include hover-links-mb;
+                    }
+                    span{
+                        padding: 0 .4rem;
+                    }
+                    
+                }
+            }
+        }
+    }
     
 }
