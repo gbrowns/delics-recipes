@@ -24,7 +24,7 @@
   header .logo span {
     font-size: 2rem;
     font-weight: bold;
-    color: yellow;
+    color: rgb(221, 221, 27);
   }
   header .logo span span {
     color: #000;
@@ -72,7 +72,7 @@
   }
   header .navlinks .links a:hover {
     transition: all 0.4s ease-in-out;
-    background-color: yellow;
+    background-color: rgb(221, 221, 27);
   }
   header .navlinks .btns {
     display: flex;
@@ -85,7 +85,7 @@
   }
   header .navlinks .btns .btn:hover {
     transition: all 0.4s ease-in-out;
-    background-color: yellow;
+    background-color: rgb(221, 221, 27);
   }
   header .navlinks .btns .btn span {
     padding: 0 0.4rem;
@@ -162,7 +162,7 @@
     position: relative;
     width: calc(50% - 1.2rem);
     margin: 0.6rem 0.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.103);
+    border: 1px solid rgba(0, 0, 0, 0.055);
     border-radius: 5px;
     cursor: pointer;
     display: flex;
@@ -211,6 +211,51 @@
   section .recipe .recipe-list .recipe-item .recipe-btns .btn {
     cursor: pointer;
     padding-right: 2rem;
+  }
+  section .about {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  section .about h1 {
+    text-align: center;
+    padding: 1.5rem 0;
+  }
+  section .about .content {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 3rem;
+  }
+  section .about .content .sec {
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.103);
+    margin-bottom: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+  }
+  section .about .content .sec:hover {
+    transition: all 0.4s ease-in-out;
+    border: 1px solid rgb(221, 221, 27);
+  }
+  section .about .content .sec .ctrl {
+    font-size: 1.6rem;
+    padding: 1rem 0;
+  }
+  section .about .content .sec p {
+    text-align: center;
+    padding: 0.7rem 1rem;
+  }
+  section .about .content .sec p span {
+    font-size: 1.2rem;
+    color: rgb(221, 221, 27);
   }
   footer {
     position: relative;

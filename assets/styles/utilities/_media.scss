@@ -100,6 +100,7 @@
         position: relative;
         width: 100%;
         height: auto;
+        //home section
         .home{
             position: relative;
             width: $width;
@@ -156,7 +157,7 @@
                     position: relative;
                     width: calc(50% - 1.2rem);
                     margin: .6rem .5rem;
-                    border: 1px solid rgba(0, 0, 0, 0.103);
+                    border: 1px solid rgba(0, 0, 0, 0.055);
                     border-radius: 5px;
                     cursor: pointer;
                     @include flex-col;
@@ -203,6 +204,52 @@
                         }
                     }
                 }
+            }
+        }
+
+        //about section
+        .about{
+            position: relative;
+            width: 100%;
+            height: auto;
+            h1{
+                text-align: center;
+                padding: 1.5rem 0;
+            }
+            .content{
+                position: relative;
+                width: 100%;
+                height: auto;
+                @include flex-col;
+                justify-content: center;
+                align-items: center;
+                padding: 1rem 3rem;
+                .sec{
+                    position: relative;
+                    border: 1px solid rgba(0, 0, 0, 0.103);
+                    margin-bottom: 1rem;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    transition: all 0.4s ease-in-out;
+                    &:hover{
+                        transition: all 0.4s ease-in-out;
+                        border: 1px solid $theme;;
+                    }
+                    @include flex-col;
+                    .ctrl{
+                        font-size: 1.6rem;
+                        padding: 1rem 0;
+                    }
+                    p{
+                        text-align: center;
+                        padding: .7rem 1rem;
+                        span{
+                            font-size: 1.2rem;
+                            color: $theme;
+                        }
+                    }
+                }
+               
             }
         }
     }
