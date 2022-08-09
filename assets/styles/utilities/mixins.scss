@@ -42,9 +42,41 @@
 //nav link mixins
 @mixin navlinks{
     text-decoration: none;
+    
+}
+
+@mixin logo-style($size, $color){
+    font-size: $size;
+    color: $theme; //$theme
+    font-weight: bold;
+    span{
+        color: $color; //$black
+    }
 }
 
 @mixin hover-links-mb{
     transition: all 0.4s ease-in-out;
     background-color: $theme;
+}
+
+//home content
+@mixin home-content{
+    position: relative;
+    z-index: 5;
+    color: $white;
+    margin: 0 1rem;
+    @include flex-col;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+
+}
+
+//section title
+
+@mixin section-title($pad, $size){
+    position: relative;
+    text-align: center;
+    padding: $pad 0;
+    font-size: $size;
 }

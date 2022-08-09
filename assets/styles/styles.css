@@ -8,14 +8,6 @@
     display: flex;
     flex-direction: column;
   }
-  .show-menu {
-    display: flex !important;
-    transition: all 0.4s ease-in-out;
-  }
-  .dark-nav {
-    background-color: rgba(29, 28, 28, 0.815);
-    color: rgb(206, 204, 204);
-  }
   header {
     position: fixed;
     top: 0;
@@ -31,14 +23,15 @@
   }
   header .logo span {
     font-size: 2rem;
-    font-weight: bold;
     color: rgb(221, 221, 27);
+    font-weight: bold;
   }
   header .logo span span {
     color: #000;
   }
   header .menu {
     position: absolute;
+    display: block !important;
     right: 2rem;
   }
   header .menu .ctrl {
@@ -48,12 +41,13 @@
   header .navlinks {
     position: absolute;
     display: none;
+    display: none !important;
     flex-direction: column;
     background-color: #fff;
     top: 0;
     right: 0;
     z-index: 5;
-    width: 100vw;
+    width: 100%;
     border-radius: 0px 0px 5px 5px;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.253);
     transition: all 0.4s ease-in-out;
@@ -106,8 +100,8 @@
   }
   section .home {
     position: relative;
-    width: 100vw;
-    height: 70vh;
+    width: 100%;
+    height: 70vh !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -143,35 +137,39 @@
   }
   section .home .content span {
     font-family: "Dancing Script", cursive;
-    font-size: 1.8rem;
+    font-size: 1.8rem !important;
   }
   section .home .content h1 {
-    font-size: 4rem;
+    font-size: 4rem !important;
     text-transform: uppercase;
     font-weight: bold;
   }
   section .home .content p {
     text-align: center;
+    font-size: 1.2rem !important;
   }
   section .recipe {
     position: relative;
     width: 100%;
   }
   section .recipe h1 {
+    position: relative;
     text-align: center;
     padding: 1.5rem 0;
+    font-size: 1.5rem;
   }
   section .recipe .recipe-list {
     position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    padding: 0 !important;
   }
   section .recipe .recipe-list .recipe-item {
     position: relative;
-    width: calc(50% - 1.2rem);
+    width: calc(50% - 1.2rem) !important;
     margin: 0.6rem 0.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.055);
+    border: 1px solid rgba(0, 0, 0, 0.055) !important;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
@@ -201,8 +199,8 @@
     flex-direction: column;
   }
   section .recipe .recipe-list .recipe-item .recipe-content h2 {
-    padding: 0.2rem 0;
-    font-size: 1.2rem;
+    padding: 0.2rem 0 !important;
+    font-size: 1.2rem !important;
   }
   section .recipe .recipe-list .recipe-item .recipe-content p {
     line-height: 1.6;
@@ -210,6 +208,8 @@
     height: -moz-fit-content;
     height: fit-content;
     overflow: hidden;
+    font-size: 1rem !important;
+    padding-right: 0 !important;
   }
   section .recipe .recipe-list .recipe-item .recipe-btns {
     display: flex;
@@ -227,8 +227,10 @@
     height: auto;
   }
   section .about h1 {
+    position: relative;
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 2rem 0;
+    font-size: 1.5rem;
   }
   section .about .content {
     position: relative;
@@ -253,6 +255,7 @@
   section .about .content .sec:hover {
     transition: all 0.4s ease-in-out;
     border: 1px solid rgb(221, 221, 27);
+    transform: scale(1.05);
   }
   section .about .content .sec .ctrl {
     font-size: 1.6rem;
@@ -268,6 +271,7 @@
   }
   footer {
     position: relative;
+    height: auto !important;
     display: grid;
     grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
   }
@@ -337,6 +341,7 @@
   }
   footer .bottom .btm-links a {
     text-decoration: none;
+    font-size: 1.1rem;
     color: rgb(192, 189, 189);
     margin: 0.3rem 0.5rem;
   }
@@ -349,267 +354,351 @@
     margin-top: 0.5rem;
   }
 }
-.show-menu {
-  display: flex;
-}
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+.show-menu {
+  display: flex !important;
+  transition: all 0.4s ease-in-out;
+}
+
+.dark-nav {
+  background-color: rgba(29, 28, 28, 0.815);
+}
+
 body, .banner {
-  height: 100vh;
-  width: 100vw;
+  height: auto;
+  width: 100%;
   background-color: #fff;
   font-family: "Oswald", sans-serif;
   color: #000;
   font-size: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
-/*
-header{
-    position: fixed;
-    height: 10vh;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.274);
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    display: flex;
-    flex-direction: row; 
-    justify-content: space-around; 
-    align-items: center;
-    .logo{
-        span{
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: rgb(0, 0, 0);
-        }
-    }  
-
-    .navlinks{
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        .far-bars{
-            display: none;
-            color: red;
-        }
-        a{
-            text-decoration: none;
-            color: rgb(37, 17, 70);
-            font-size: 1.2rem;
-            font-weight: bold;
-            padding: 0.5rem 1rem;
-            transition: all 0.3s ease-in-out;
-            &:hover{
-                color: rgb(121, 145, 16);
-            }
-        }
-    }
-
-    form{
-        position: relative;
-        border: 1px solid rgb(31, 17, 54);
-        border-radius: 30px;
-        input{
-            border: none;
-            background-color: transparent;
-            outline: none;
-            font-size: 1rem;
-            color: rgb(7, 7, 22);
-            padding: 0.5rem 1rem;
-            transition: all 0.3s ease-in-out;
-            padding: .6rem 1rem;
-        }
-    }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(29, 28, 28, 0.137);
+  align-items: center;
+  justify-content: space-evenly;
+  height: 10vh;
+}
+header .menu {
+  display: none;
+}
+header .logo span {
+  font-size: 2.2rem;
+  color: rgb(221, 221, 27);
+  font-weight: bold;
+}
+header .logo span span {
+  color: #000;
+}
+header .navlinks {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  color: rgb(224, 223, 223);
+}
+header .navlinks .close-menu {
+  display: none;
+}
+header .navlinks .links {
+  display: flex;
+  flex-direction: row;
+}
+header .navlinks .links a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  padding: 0rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: rgb(224, 223, 223);
+}
+header .navlinks .btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+header .navlinks .btns .btn {
+  padding: 0rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-
-
-section{
-    position: relative;
-    top: 10vh;
-    height: 90vh;
-    .home{
-        position: relative;
-        display: flex;
-        flex-direction: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        .side1{
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            border: 1px solid;
-            height: 90vh;
-            margin-left: 15rem;
-            h1{
-                font-size: 3rem;
-                font-weight: bold;
-                color: rgb(0, 0, 0);
-                padding: 1.5rem 0;
-            }
-            p{
-                font-size: 1.3rem;
-                color: rgb(0, 0, 0);
-                line-height: 1.8;
-                padding-bottom: 1rem;
-            }
-            button{
-                position: relative;
-                border: none;
-                border-radius: 30px;
-                background-color: rgb(236, 240, 17);
-                color: rgb(0, 0, 0);
-                font-size: 1.2rem;
-                font-weight: bold;
-                padding: 0.5rem 1rem;
-                transition: all 0.3s ease-in-out;
-                &:hover{
-                    background: none;
-                    color: rgb(0, 0, 0);
-                }
-            }
-        }
-        .side2{
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid;
-            height: 90vh;
-            margin-right: 15rem;
-            img{
-              width: 70%;
-              object-fit: cover;
-            }
-
-        }
-    }
-
-    .recip-title{
-        display: none;
-    }
+section {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+section .home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section .home img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-clip: content-box;
+}
+section .home .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.329);
+}
+section .home .content {
+  position: relative;
+  z-index: 5;
+  color: #fff;
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+section .home .content span {
+  font-family: "Dancing Script", cursive;
+  font-size: 3.5rem;
+}
+section .home .content h1 {
+  font-size: 8rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+section .home .content p {
+  text-align: center;
+  font-size: 1.5rem;
+}
+section .recipe {
+  position: relative;
+  width: 100%;
+}
+section .recipe h1 {
+  position: relative;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 2rem;
+}
+section .recipe .recipe-list {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 0.5rem 10rem;
+}
+section .recipe .recipe-list .recipe-item {
+  position: relative;
+  width: calc(25% - 1.2rem);
+  margin: 0.6rem 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.096);
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease-in-out;
+}
+section .recipe .recipe-list .recipe-item:hover {
+  transition: all 0.4s ease-in-out;
+  border: 1px solid rgba(0, 0, 0, 0.281);
+  filter: none;
+  transform: translateY(-5px);
+}
+section .recipe .recipe-list .recipe-item img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  filter: grayscale(0.3);
+  transition: all 0.4s ease-in-out;
+}
+section .recipe .recipe-list .recipe-item img:hover {
+  transition: all 0.4s ease-in-out;
+  filter: none;
+}
+section .recipe .recipe-list .recipe-item .recipe-content {
+  display: flex;
+  flex-direction: column;
+}
+section .recipe .recipe-list .recipe-item .recipe-content h2 {
+  padding: 0.5rem 0;
+  font-size: 1.6rem;
+}
+section .recipe .recipe-list .recipe-item .recipe-content p {
+  line-height: 1.6;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: hidden;
+  font-size: 1.2rem;
+  padding-right: 1rem;
+}
+section .recipe .recipe-list .recipe-item .recipe-btns {
+  padding: 0.6rem 0.5rem;
+  display: flex;
+  flex-direction: row;
+}
+section .recipe .recipe-list .recipe-item .recipe-btns .btn {
+  cursor: pointer;
+  padding-right: 2rem;
+}
+section .about {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+section .about h1 {
+  position: relative;
+  text-align: center;
+  padding: 3rem 0;
+  font-size: 2rem;
+}
+section .about .content {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 3rem;
+}
+section .about .content .sec {
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.103);
+  margin-bottom: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+section .about .content .sec:hover {
+  transition: all 0.4s ease-in-out;
+  border: 1px solid rgb(221, 221, 27);
+  transform: scale(1.05);
+}
+section .about .content .sec .ctrl {
+  font-size: 1.6rem;
+  padding: 1rem 0;
+}
+section .about .content .sec p {
+  text-align: center;
+  padding: 0.7rem 1rem;
+}
+section .about .content .sec p span {
+  font-size: 1.2rem;
+  color: rgb(221, 221, 27);
 }
 
-
-
-
-.recipes{
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1.5rem;
-    margin: 0 10rem;
-    .recipe{
-        position: relative;
-        border-radius: 10px;
-        background-color: #ffff;
-        transform: scaleY(1);
-        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.123);
-        transition: all 0.4s ease-in-out;
-        //max-height: 50vh !important;
-        &:hover{
-            transform: translateY(-5px);
-            transition: all 0.4s ease-in-out;
-        }
-        img{
-            width: 100%;
-            height: 30vh;
-            border-radius: 10px 10px 0 0;
-            object-fit: cover;
-            filter: grayscale(.3);
-            &:hover{
-                transition: all 0.4s ease-in-out;
-                filter: grayscale(0);
-            }
-        }
-        h5{
-            font-size: 1.2rem;
-            padding: .5rem 1rem;
-            text-transform: capitalize;
-
-            overflow-y: hidden;
-        }
-        p{
-            position: relative;
-            font-size: 1.1rem;
-            padding: 0 1rem;
-            line-height: 1.8rem;
-            height: 3vh;
-            color: rgb(6, 6, 32);
-            overflow-y: hidden;
-        }
-        .ctrls{
-            position: relative;
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            margin-top: .5rem ;
-            input{
-                width: 230px;
-                height: 45px;
-                font-size: 1rem;
-                font-weight: 600;
-                margin: 1rem;
-                border: none;
-                outline: none;
-                cursor: pointer;
-                transition: all 0.4s ease-in-out;
-                &:hover{
-                    background-color: rgba(6, 7, 26, 0.493);
-                    color: #ffff;
-                    transition: all 0.4s ease-in-out;
-                }
-            }
-            i{
-                position: relative;
-                border: 1px solid #0c06415e;
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                margin-left: 1rem;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                cursor: pointer;
-            }
-        }
-    }
+footer {
+  position: relative;
+  height: 50vh;
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(500px, 1fr));
 }
-
-footer{
-    position: relative;
-    height: 10vh;
-    background-color: rgb(10, 34, 13);
-    bottom: 0;
+footer .top {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
-
-//responsive design
-@media screen and (max-width: 425px){
-    header{
-        .navlinks{
-            display: none;
-        }
-        form{
-            display: none;
-        }
-        .logo{
-            span{
-                font-size: 2rem;
-            }
-        }
-    }
-    .recipes{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}*//*# sourceMappingURL=styles.css.map */
+footer .top img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+footer .top .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.308);
+}
+footer .top .content {
+  position: relative;
+  z-index: 1;
+  color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Dancing Script", cursive;
+}
+footer .top .content h1 {
+  padding: 1rem 0;
+}
+footer .top .content .icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: space-evenly;
+}
+footer .top .content .icons .icon {
+  font-size: 1.2rem;
+  color: #f1f1f1;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  margin-left: 0.4rem;
+  transition: all 0.4s ease-in-out;
+}
+footer .top .content .icons .icon:hover {
+  transition: all 0.4s ease-in-out;
+  color: rgb(212, 184, 20);
+}
+footer .bottom {
+  background-color: #262626;
+  color: rgb(173, 171, 171);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+footer .bottom .btm-links a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: rgb(192, 189, 189);
+  margin: 0.3rem 0.5rem;
+}
+footer .bottom .btm-links a:hover {
+  transition: all 0.3s ease-in-out;
+  color: rgb(228, 226, 226);
+}
+footer .bottom .copyright {
+  font-size: 0.87rem;
+  margin-top: 0.5rem;
+}/*# sourceMappingURL=styles.css.map */

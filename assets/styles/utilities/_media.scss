@@ -12,17 +12,6 @@
         flex-direction: column;
         @include flex-col;
     }
-    // show menu
-    .show-menu{
-        display: flex !important;
-        transition: all 0.4s ease-in-out;
-    }
-
-    .dark-nav{
-        background-color: rgba(29, 28, 28, 0.815);
-        color: rgb(206, 204, 204);
-        
-    }
 
     header{
         position: fixed;
@@ -38,16 +27,12 @@
         height: 10vh;
         .logo{
             span{
-                font-size: 2rem;
-                font-weight: bold;
-                color: $theme;
-                span{
-                    color: $black;
-                }
+                @include logo-style(2rem, $black);
             }
         }
         .menu{
             position: absolute;
+            display: block !important;
             right: 2rem;
             .ctrl{
                 font-size: 1.5rem;
@@ -57,6 +42,7 @@
         .navlinks{
             position: absolute;
             @include set-display(none);
+            display: none !important;
             flex-direction: column;
             background-color: $white;
             top: 0;
@@ -117,7 +103,7 @@
         .home{
             position: relative;
             width: $width;
-            height: 70vh;
+            height: 70vh !important;
             @include flex-col;
             justify-content: center;
             align-items: center;
@@ -141,15 +127,16 @@
                 margin-bottom: 3rem;
                 span{
                     font-family: 'Dancing Script', cursive;
-                    font-size: 1.8rem;
+                    font-size: 1.8rem !important;
                 }
                 h1{
-                    font-size: 4rem;
+                    font-size: 4rem !important;
                     text-transform: uppercase;
                     font-weight: bold;
                 }
                 p{
                     text-align: center;
+                    font-size: 1.2rem !important;
                 }
             }
         }
@@ -159,18 +146,18 @@
             position: relative;
             width: 100%;
             h1{
-                text-align: center;
-                padding: 1.5rem 0;
+                @include section-title(1.5rem, 1.5rem); //check further
             }
             .recipe-list{
                 position: relative;
                 @include flex-row;
                 flex-wrap: wrap;
+                padding: 0 !important;
                 .recipe-item{
                     position: relative;
-                    width: calc(50% - 1.2rem);
+                    width: calc(50% - 1.2rem) !important;
                     margin: .6rem .5rem;
-                    border: 1px solid rgba(0, 0, 0, 0.055);
+                    border: 1px solid rgba(0, 0, 0, 0.055) !important;
                     border-radius: 5px;
                     cursor: pointer;
                     @include flex-col;
@@ -197,13 +184,15 @@
                     .recipe-content{
                         @include flex-col;
                         h2{
-                            padding: .2rem 0;
-                            font-size: 1.2rem;
+                            padding: .2rem 0 !important;
+                            font-size: 1.2rem !important;
                         }
                         p{
                             line-height: 1.6;
                             height: fit-content;
-                            overflow: hidden
+                            overflow: hidden;
+                            font-size: 1rem !important;
+                            padding-right: 0 !important;
 
                         }
                     }
@@ -226,8 +215,7 @@
             width: 100%;
             height: auto;
             h1{
-                text-align: center;
-                padding: 1.5rem 0;
+                @include section-title(2rem, 1.5rem);
             }
             .content{
                 position: relative;
@@ -247,6 +235,7 @@
                     &:hover{
                         transition: all 0.4s ease-in-out;
                         border: 1px solid $theme;;
+                        transform: scale(1.05);
                     }
                     @include flex-col;
                     .ctrl{
@@ -270,6 +259,7 @@
     //footer styles
     footer{
         position: relative;
+        height: auto !important;
         @include set-display(grid);
         grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
         .top{
@@ -322,6 +312,7 @@
             .btm-links{
                 a{
                     @include navlinks;
+                    font-size: 1.1rem;
                     color: rgb(192, 189, 189);
                     margin: .3rem .5rem;
                     &:hover{
