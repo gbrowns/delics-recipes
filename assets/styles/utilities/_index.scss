@@ -5,7 +5,8 @@
 @use './mixins' as *; //mixins
 @use './variables' as *; //variables
 
-body, .banner{
+@media screen and (min-width: $tablet) {
+    body, .banner{
     height: auto;
     width: 100%;
     background-color: $white;
@@ -28,7 +29,9 @@ header{
     justify-content: space-evenly;
     height: 10vh;
     .menu{
-        @include set-display(none);
+        display: none;
+        //@include set-display(none);
+        //visibility: hidden;
     }
     .logo{
         span{
@@ -303,3 +306,7 @@ section{
         }
 
     }
+ 
+}
+    
+

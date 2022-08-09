@@ -40,13 +40,16 @@
             }
         }
         .navlinks{
-            position: absolute;
+            position: absolute !important;
             @include set-display(none);
-            display: none !important;
-            flex-direction: column;
+            //display: none !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            color: $black !important;
             background-color: $white;
             top: 0;
             right: 0;
+            left: 0;
             z-index: 5;
             width: $width;
             border-radius: 0px 0px 5px 5px;
@@ -55,19 +58,31 @@
             .close-menu{
                 border: 1px solid rgba(0, 0, 0, 0.507);
                 position: relative;
+                width: 100%;
                 right: 0;
                 top: 0;
-                padding: 1rem 0;
-                font-size: 1.3rem;
+                padding: 1rem 0 !important;
+                font-size: 1.3rem !important;
                 text-align: center;
                 cursor: pointer;
+                display: block !important;
+                transition: all 0.4s ease-in-out;
+                &:hover{
+                    background-color: $black;
+                    color: $white;
+                    transition: all 0.4s ease-in-out;
+                }
             }
             .links{
-                @include flex-col;
+                //@include flex-col;
+                display: flex;
+                width: 100%;
+                flex-direction: column !important;
                 a{
                     text-decoration: none;
-                    color: $black;
-                    padding: 1rem 1rem;
+                    color: $black !important;
+                    font-weight: normal !important;
+                    padding: 1rem 1rem !important;
                     border-bottom: 1px solid rgba(0, 0, 0, 0.219);
                     cursor: pointer;
                     &:hover{
@@ -77,11 +92,16 @@
 
             }
             .btns{
-                @include flex-col;
+                display: flex;
+                flex-direction: column !important;
+                width: 100% !important;
+                align-items: flex-start !important;
                 .btn{
+                    width: 100% !important;
                     border-bottom: 1px solid rgba(0, 0, 0, 0.219);
-                    padding: 1rem 1rem;
+                    padding: 1rem 1rem !important;
                     cursor: pointer;
+                    font-weight: normal !important;
                     &:hover{
                         @include hover-links-mb;
                     }

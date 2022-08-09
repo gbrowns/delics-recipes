@@ -26,6 +26,7 @@
 
         closeMenu.addEventListener("click", () => {
             menu.classList.remove("show-menu");
+            console.log("close");
         });
         //close menu when click outside of menu
         document.addEventListener("click", (e) => {
