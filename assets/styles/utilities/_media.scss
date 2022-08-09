@@ -1,0 +1,353 @@
+@use './devices' as *;
+@use './variables' as *;
+@use './colors' as *;
+@use 'mixins' as *;
+//@use './global';
+//large mobile
+@media screen and (max-width: $lg-mobile){
+    body, .banner{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        @include flex-col;
+    }
+
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        display: flex;
+        flex-direction: row;
+        background-color: rgba(29, 28, 28, 0.137);
+        align-items: center;
+        justify-content: center;
+        height: 10vh;
+        .logo{
+            span{
+                @include logo-style(2rem, $black);
+            }
+        }
+        .menu{
+            position: absolute;
+            display: block !important;
+            right: 2rem;
+            .ctrl{
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+        }
+        .navlinks{
+            position: absolute !important;
+            @include set-display(none);
+            //display: none !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            color: $black !important;
+            background-color: $white;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 5;
+            width: $width;
+            border-radius: 0px 0px 5px 5px;
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.253);
+            transition: all 0.4s ease-in-out;
+            .close-menu{
+                border: 1px solid rgba(0, 0, 0, 0.507);
+                position: relative;
+                width: 100%;
+                right: 0;
+                top: 0;
+                padding: 1rem 0 !important;
+                font-size: 1.3rem !important;
+                text-align: center;
+                cursor: pointer;
+                display: block !important;
+                transition: all 0.4s ease-in-out;
+                &:hover{
+                    background-color: $black;
+                    color: $white;
+                    transition: all 0.4s ease-in-out;
+                }
+            }
+            .links{
+                //@include flex-col;
+                display: flex;
+                width: 100%;
+                flex-direction: column !important;
+                a{
+                    text-decoration: none;
+                    color: $black !important;
+                    font-weight: normal !important;
+                    padding: 1rem 1rem !important;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+                    cursor: pointer;
+                    &:hover{
+                        @include hover-links-mb;
+                    }
+                }
+
+            }
+            .btns{
+                display: flex;
+                flex-direction: column !important;
+                width: 100% !important;
+                align-items: flex-start !important;
+                .btn{
+                    width: 100% !important;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+                    padding: 1rem 1rem !important;
+                    cursor: pointer;
+                    font-weight: normal !important;
+                    &:hover{
+                        @include hover-links-mb;
+                    }
+                    span{
+                        padding: 0 .4rem;
+                    }
+                    
+                }
+            }
+        }
+    }
+
+    //section styles
+    section{
+        position: relative;
+        width: 100%;
+        height: auto;
+        //home section
+        .home{
+            position: relative;
+            width: $width;
+            height: 70vh !important;
+            @include flex-col;
+            justify-content: center;
+            align-items: center;
+            img{
+                @include bg-attachment;
+                object-fit: cover;
+            }
+            .overlay{
+                @include bg-attachment;
+                background-color: rgba(0, 0, 0, 0.329);
+            }
+            
+            .content{
+                position: relative;
+                z-index: 5;
+                color: $white;
+                margin: 0 1rem;
+                @include flex-col;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 3rem;
+                span{
+                    font-family: 'Dancing Script', cursive;
+                    font-size: 1.8rem !important;
+                }
+                h1{
+                    font-size: 4rem !important;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                }
+                p{
+                    text-align: center;
+                    font-size: 1.2rem !important;
+                }
+            }
+        }
+
+        //recipes section
+        .recipe{
+            position: relative;
+            width: 100%;
+            h1{
+                @include section-title(1.5rem, 1.5rem); //check further
+            }
+            .recipe-list{
+                position: relative;
+                @include flex-row;
+                flex-wrap: wrap;
+                padding: 0 !important;
+                .recipe-item{
+                    position: relative;
+                    width: calc(50% - 1.2rem) !important;
+                    margin: .6rem .5rem;
+                    border: 1px solid rgba(0, 0, 0, 0.055) !important;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    @include flex-col;
+                    transition: all .4s ease-in-out;
+                    &:hover{
+                        transition: all .4s ease-in-out;
+                        border: 1px solid rgba(0, 0, 0, 0.281);
+                        filter: none;
+                        transform: translateY(-5px)
+
+                    }
+                    img{
+                        object-fit: cover;
+                        width: 100%;
+                        border-radius: 5px 5px 0 0;
+                        filter: grayscale(.3);
+                        transition: all .4s ease-in-out;
+                        &:hover{
+                            transition: all .4s ease-in-out;
+                            filter: none;
+                            
+                        }
+                    }
+                    .recipe-content{
+                        @include flex-col;
+                        h2{
+                            padding: .2rem 0 !important;
+                            font-size: 1.2rem !important;
+                        }
+                        p{
+                            line-height: 1.6;
+                            height: fit-content;
+                            overflow: hidden;
+                            font-size: 1rem !important;
+                            padding-right: 0 !important;
+
+                        }
+                    }
+                    .recipe-btns{
+                        @include flex-row;
+                        padding: .8rem 0;
+                        justify-content: center;
+                        .btn{
+                            cursor: pointer;
+                            padding-right: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        //about section
+        .about{
+            position: relative;
+            width: 100%;
+            height: auto;
+            h1{
+                @include section-title(2rem, 1.5rem);
+            }
+            .content{
+                position: relative;
+                width: 100%;
+                height: auto;
+                @include flex-col;
+                justify-content: center;
+                align-items: center;
+                padding: 1rem 3rem;
+                .sec{
+                    position: relative;
+                    border: 1px solid rgba(0, 0, 0, 0.103);
+                    margin-bottom: 1rem;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    transition: all 0.4s ease-in-out;
+                    &:hover{
+                        transition: all 0.4s ease-in-out;
+                        border: 1px solid $theme;;
+                        transform: scale(1.05);
+                    }
+                    @include flex-col;
+                    .ctrl{
+                        font-size: 1.6rem;
+                        padding: 1rem 0;
+                    }
+                    p{
+                        text-align: center;
+                        padding: .7rem 1rem;
+                        span{
+                            font-size: 1.2rem;
+                            color: $theme;
+                        }
+                    }
+                }
+               
+            }
+        }
+    }
+
+    //footer styles
+    footer{
+        position: relative;
+        height: auto !important;
+        @include set-display(grid);
+        grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+        .top{
+            position: relative;
+            @include flex-col;
+            justify-content: center;
+            align-items: center;
+            img{
+                @include bg-attachment;
+                object-fit: cover;
+            }
+
+            .overlay{
+                @include bg-attachment;
+                background-color: rgba(0, 0, 0, 0.308);
+            }
+            .content{
+                position: relative;
+                z-index: 1;
+                color: $theme-light;
+                @include flex-col;
+                justify-content: center;
+                align-items: center;
+                font-family: 'Dancing Script', cursive;
+                h1{
+                    padding: 1rem 0;
+                }
+                .icons{
+                    @include flex-row;
+                    justify-content: space-evenly;
+                    align-items: space-evenly;
+                    .icon{
+                        @include icon-style(.4rem, .5rem, 1.2rem);
+                        transition: all 0.4s ease-in-out;
+                        &:hover{
+                            transition: all 0.4s ease-in-out;
+                            color: rgb(212, 184, 20)
+                        }
+                    }
+                }
+            }
+        }
+        .bottom{
+            background-color: $footer-bg;
+            color: rgb(173, 171, 171);
+            @include flex-col;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 0;
+            .btm-links{
+                a{
+                    @include navlinks;
+                    font-size: 1.1rem;
+                    color: rgb(192, 189, 189);
+                    margin: .3rem .5rem;
+                    &:hover{
+                        transition: all 0.3s ease-in-out;
+                        color: rgb(228, 226, 226);
+                    }
+                }
+            }
+
+            .copyright{
+                font-size: .87rem;
+                margin-top: .5rem;
+            }
+        }
+
+    }
+    
+}

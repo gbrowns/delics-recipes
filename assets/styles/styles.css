@@ -1,409 +1,736 @@
-/*# sourceMappingURL=styles.css.map */
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box; 
-}
-.banner{
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background-color: rgb(255, 246, 246)
-}
-
-header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: inherit;
-  height: 15vh;
-  background-color: #fff;
-  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.096);
-  margin-bottom: 2rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  z-index: 1;
-}
-header .navlinks{
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-header .navlinks > a{
-  font-size: 1.3rem;
-  padding: 1rem 0;
-  margin-right: 4rem;
-  text-decoration: none;
-  color: rgb(8, 6, 22);
-  font-weight: 600;
-  transition: all 0.4s ease-in-out;
-}
-
-header .navlinks > a:hover{
-  transition: all 0.4s ease-in-out;
-  color: rgb(70, 16, 121);
-  border-bottom: 1px solid;
-}
-
-header .navlinks > i{
-  display: none;
-}
-
-header form{
-  position: relative;
-  display: flex;
-  flex-direction: row;
-}
-header form > input{
-  width: 320px;
-  padding: .6rem;
-  font-size: 1.1rem;
-  outline: none;
-}
-
-header form > input[type="submit"]{
-  width: 150px;
-  border: none;
-  background-color: rgb(117, 214, 37);
-  cursor: pointer;
-}
-
-/*sections*/
-section{
-  position: relative;
-  top: 15vh;
-  width: inherit;
-  min-height: 90vh;
-  padding-bottom: 5rem
-}
-
-/*home page*/
-section .home{
-  position: absolute; 
-  display: grid; /*grid*/
-  grid-template-columns: repeat(2, 1fr);
-  height: inherit;
-  
-}
-
-section .home .side1{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 10rem
-}
-
-section .home .side1 > h1{
-  font-size: 4rem;
-}
-
-section .home .side1 > p{
-  font-size: 1.3rem;
-  line-height: 2rem;
-  padding: 1rem 0;
-}
-
-section .home .side1 > button{
-  width: 300px;
-  height: 50px;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 10px;
-  background-color: rgb(255, 177, 33);
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.4s ease-in-out;
-
-}
-section .home .side1 > button:hover{
-  transition: all 0.4s ease-in-out;
-  background-color: rgb(247, 245, 243);
-  color: #000;
-  border: 1px solid rgb(255, 177, 33);
-}
-
-section .home .side2{
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-section .home .side2 > img{
-  width: 500px;
-  padding: 11rem 0;
-}
-
-/*contact page*/
-section .contact{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  border: 1px solid;
-  display: none; /*flex*/
-  transition: all 0.4s ease-in-out;
-}
-section .contact > img{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  object-fit: cover;
-}
-
-section .contact  .overlay{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(7, 4, 15, 0.616);
-  z-index: 0;
-}
-
-section .contact .content{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  color: #ffff;
-  z-index: 0;
-  
-}
-
-section .contact .content > h1{
-  padding: 3.5rem 0 1rem 0;
-  font-size: 2.5rem;
-}
-section .contact .content > span{
-  font-size: 1.2rem;
-  padding-bottom: 3rem;
-}
-section .contact .content > form{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-section .contact .content form > input, textarea{
-  position: relative;
-  width: 500px;
-  height: 60px;
-  border: 1px solid rgba(3, 5, 32, 0.753);
-  margin-bottom: 1rem;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  color: rgba(3, 5, 32, 0.753);
-  outline: none;
-  background-color: rgba(255, 255, 255, 0.603);
-  padding: 0 2rem;
-}
-section .contact .content form >textarea{
-  height: 200px;
-  padding-top: 2rem;
-} 
-section .contact .content form > input[type="submit"]{
-  border: none;
-  background-color: rgb(255, 177, 33);
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.4s ease-in-out;
-}
-
-section .contact .content form > input[type="submit"]:hover{
-  transition: all 0.4s ease-in-out;
-  background-color:rgba(7, 4, 15, 0.616);
-  border: 2px solid rgb(255, 177, 33);
-
-}
-
-
-/*recipe */
-  section .recipe-title {
-    display: none;
-    position: relative;
-    text-align: center;
-    font-size: 2rem;
-    padding: 3rem 0;
-    color: rgb(35, 6, 63);
-  }
-  section .recipes {
-    position: relative;
-    display: none; /*grid*/
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 3rem;
-    margin: 0 20rem;
-  }
-
-  .recipes .recipe {
-    position: relative;
-    border-radius: 10px;
-    background-color: white;
-    transform: scaleY(1);
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.342);
-    transition: all 0.4s ease-in-out;
-  }
-  
-  .recipes .recipe:hover {
-    transform: translateY(-5px);
-    transition: all 0.4s ease-in-out;
-  }
-  .recipes .recipe img {
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap"); /*COLORS*/
+@media screen and (max-width: 425px) {
+  body, .banner {
     width: 100%;
-    height: 30vh;
-    border-radius: 10px 10px 0 0 ;
-    object-fit:cover;
-    filter: grayscale(0.3);
-  }
-  .recipes .recipe img:hover {
-    transition: all 0.4s ease-in-out;
-    filter: grayscale(0);
-  }
-  .recipes .recipe h5 {
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-    text-transform: capitalize;
-  }
-  .recipes .recipe p {
-    font-size: 1.2rem;
-    padding: 0 1rem;
-    line-height: 1.5rem;
-  }
-  .recipes .recipe .ctrls {
-    position: relative;
-    width: 100%;
+    height: auto;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(29, 28, 28, 0.137);
     align-items: center;
-    margin-top: 0.5rem;
+    justify-content: center;
+    height: 10vh;
   }
-  .recipes .recipe .ctrls input {
-    width: 230px;
-    height: 45px;
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 1rem;
-    border: none;
-    outline: none;
+  header .logo span {
+    font-size: 2rem;
+    color: rgb(221, 221, 27);
+    font-weight: bold;
+  }
+  header .logo span span {
+    color: #000;
+  }
+  header .menu {
+    position: absolute;
+    display: block !important;
+    right: 2rem;
+  }
+  header .menu .ctrl {
+    font-size: 1.5rem;
     cursor: pointer;
+  }
+  header .navlinks {
+    position: absolute !important;
+    display: none;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    color: #000 !important;
+    background-color: #fff;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.253);
     transition: all 0.4s ease-in-out;
   }
-  .recipes .recipe .ctrls input:hover {
-    background-color: rgba(6, 7, 26, 0.493);
-    color: white;
-    transition: all 0.4s ease-in-out;
-  }
-  .recipes .recipe .ctrls i {
+  header .navlinks .close-menu {
+    border: 1px solid rgba(0, 0, 0, 0.507);
     position: relative;
-    border-radius: 50%;
-    margin-left: 1rem;
+    width: 100%;
+    right: 0;
+    top: 0;
+    padding: 1rem 0 !important;
+    font-size: 1.3rem !important;
+    text-align: center;
+    cursor: pointer;
+    display: block !important;
+    transition: all 0.4s ease-in-out;
+  }
+  header .navlinks .close-menu:hover {
+    background-color: #000;
+    color: #fff;
+    transition: all 0.4s ease-in-out;
+  }
+  header .navlinks .links {
     display: flex;
+    width: 100%;
+    flex-direction: column !important;
+  }
+  header .navlinks .links a {
+    text-decoration: none;
+    color: #000 !important;
+    font-weight: normal !important;
+    padding: 1rem 1rem !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+    cursor: pointer;
+  }
+  header .navlinks .links a:hover {
+    transition: all 0.4s ease-in-out;
+    background-color: rgb(221, 221, 27);
+  }
+  header .navlinks .btns {
+    display: flex;
+    flex-direction: column !important;
+    width: 100% !important;
+    align-items: flex-start !important;
+  }
+  header .navlinks .btns .btn {
+    width: 100% !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+    padding: 1rem 1rem !important;
+    cursor: pointer;
+    font-weight: normal !important;
+  }
+  header .navlinks .btns .btn:hover {
+    transition: all 0.4s ease-in-out;
+    background-color: rgb(221, 221, 27);
+  }
+  header .navlinks .btns .btn span {
+    padding: 0 0.4rem;
+  }
+  section {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  section .home {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-
-
-  /* footer */
-footer{
-  position: relative;
-  display: flex;
-  top: 15vh; /**/
-  flex-direction: column;
-  background-color: rgb(4, 4, 29);
-  color: rgb(231, 227, 227);
+  section .home img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  section .home .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.329);
+  }
+  section .home .content {
+    position: relative;
+    z-index: 5;
+    color: #fff;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+  section .home .content span {
+    font-family: "Dancing Script", cursive;
+    font-size: 1.8rem !important;
+  }
+  section .home .content h1 {
+    font-size: 4rem !important;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  section .home .content p {
+    text-align: center;
+    font-size: 1.2rem !important;
+  }
+  section .recipe {
+    position: relative;
+    width: 100%;
+  }
+  section .recipe h1 {
+    position: relative;
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 1.5rem;
+  }
+  section .recipe .recipe-list {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 ;
+  }
+  section .recipe .recipe-list .recipe-item {
+    position: relative;
+    width: calc(50% - 1.2rem) !important;
+    margin: 0.6rem 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.055) !important;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease-in-out;
+  }
+  section .recipe .recipe-list .recipe-item:hover {
+    transition: all 0.4s ease-in-out;
+    border: 1px solid rgba(0, 0, 0, 0.281);
+    filter: none;
+    transform: translateY(-5px);
+  }
+  section .recipe .recipe-list .recipe-item img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    filter: grayscale(0.3);
+    transition: all 0.4s ease-in-out;
+  }
+  section .recipe .recipe-list .recipe-item img:hover {
+    transition: all 0.4s ease-in-out;
+    filter: none;
+  }
+  section .recipe .recipe-list .recipe-item .recipe-content {
+    display: flex;
+    flex-direction: column;
+  }
+  section .recipe .recipe-list .recipe-item .recipe-content h2 {
+    padding: 0.2rem 0 !important;
+    font-size: 1.2rem !important;
+  }
+  section .recipe .recipe-list .recipe-item .recipe-content p {
+    line-height: 1.6;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    overflow: hidden;
+    font-size: 1rem !important;
+    padding-right: 0 !important;
+  }
+  section .recipe .recipe-list .recipe-item .recipe-btns {
+    display: flex;
+    flex-direction: row;
+    padding: 0.8rem 0;
+    justify-content: center;
+  }
+  section .recipe .recipe-list .recipe-item .recipe-btns .btn {
+    cursor: pointer;
+    padding-right: 2rem;
+  }
+  section .about {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  section .about h1 {
+    position: relative;
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 1.5rem;
+  }
+  section .about .content {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 3rem;
+  }
+  section .about .content .sec {
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.103);
+    margin-bottom: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+  }
+  section .about .content .sec:hover {
+    transition: all 0.4s ease-in-out;
+    border: 1px solid rgb(221, 221, 27);
+    transform: scale(1.05);
+  }
+  section .about .content .sec .ctrl {
+    font-size: 1.6rem;
+    padding: 1rem 0;
+  }
+  section .about .content .sec p {
+    text-align: center;
+    padding: 0.7rem 1rem;
+  }
+  section .about .content .sec p span {
+    font-size: 1.2rem;
+    color: rgb(221, 221, 27);
+  }
+  footer {
+    position: relative;
+    height: auto !important;
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  footer .top {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .top img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  footer .top .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.308);
+  }
+  footer .top .content {
+    position: relative;
+    z-index: 1;
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Dancing Script", cursive;
+  }
+  footer .top .content h1 {
+    padding: 1rem 0;
+  }
+  footer .top .content .icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: space-evenly;
+  }
+  footer .top .content .icons .icon {
+    font-size: 1.2rem;
+    color: #f1f1f1;
+    padding: 0 0.5rem;
+    cursor: pointer;
+    margin-left: 0.4rem;
+    transition: all 0.4s ease-in-out;
+  }
+  footer .top .content .icons .icon:hover {
+    transition: all 0.4s ease-in-out;
+    color: rgb(212, 184, 20);
+  }
+  footer .bottom {
+    background-color: #262626;
+    color: rgb(173, 171, 171);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+  }
+  footer .bottom .btm-links a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: rgb(192, 189, 189);
+    margin: 0.3rem 0.5rem;
+  }
+  footer .bottom .btm-links a:hover {
+    transition: all 0.3s ease-in-out;
+    color: rgb(228, 226, 226);
+  }
+  footer .bottom .copyright {
+    font-size: 0.87rem;
+    margin-top: 0.5rem;
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-footer .footlinks{
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding: 2rem 0;
-  grid-gap: 2rem;
-}
-
-footer .footlinks .link1{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin-left: 20rem;
-  justify-content: space-evenly
-}
-footer .footlinks .link1 > span{
-  font-size: 1.3rem;
-  padding: 2rem 0;
-}
-
-footer .footlinks .link1 .icons{
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  
-}
-
-.footlinks .link1 .icons > .icon{
- border: 1px solid;
- color: red;
-}
-footer .footlinks .link2{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin-right: 20rem;
-}
-
-footer .footlinks .link2 > span{
-  font-size: 1.3rem;
-  padding: 1rem 0;
-}
-
-footer .footlinks .link2 > a{
-  font-size: 1.2rem;
-  padding-bottom: 1rem;
-   transition: all 0.4s ease-in-out;
-}
-
-footer .footlinks .link2 > a:hover{
-  color: rgb(172, 167, 167);
+.show-menu {
+  display: flex !important;
   transition: all 0.4s ease-in-out;
 }
-footer >span{
-  position: relative;
-  text-align: center;
-  padding: 2rem 0;
 
-}
-footer span > b{
-  color: blueviolet;
+.dark-nav {
+  background-color: rgba(29, 28, 28, 0.815);
 }
 
-/*global styles*/
-/*display none to all sections*/
-.sec1{
-  display: none; /*grid*/
+body, .banner {
+  height: auto;
+  width: 100%;
+  background-color: #fff;
+  font-family: "Oswald", sans-serif;
+  color: #000;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
 }
-.sec2{
-  display: none; /*grid*/
-}
-.sec3{
-  display: none; /*flex*/
-}
+@media screen and (min-width: 768px) {
+  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(29, 28, 28, 0.137);
+    align-items: center;
+    justify-content: space-evenly;
+    height: 10vh;
+  }
+  header .menu {
+    display: none;
+  }
+  header .logo span {
+    font-size: 2.2rem;
+    color: rgb(221, 221, 27);
+    font-weight: bold;
+  }
+  header .logo span span {
+    color: #000;
+  }
+  header .navlinks {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    color: rgb(224, 223, 223);
+  }
+  header .navlinks .close-menu {
+    display: none;
+  }
+  header .navlinks .links {
+    display: flex;
+    flex-direction: row;
+  }
+  header .navlinks .links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    padding: 0rem 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: rgb(224, 223, 223);
+  }
+  header .navlinks .btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  header .navlinks .btns .btn {
+    padding: 0rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+  }
 
+  section {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  section .home {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  section .home img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+      object-fit: cover;
+    background-clip: content-box;
+  }
+  section .home .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.329);
+  }
+  section .home .content {
+    position: relative;
+    z-index: 5;
+    color: #fff;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+  section .home .content span {
+    font-family: "Dancing Script", cursive;
+    font-size: 3.5rem;
+  }
+  section .home .content h1 {
+    font-size: 8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  section .home .content p {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  section .recipe {
+    position: relative;
+    width: 100%;
+  }
+  section .recipe h1 {
+    position: relative;
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 2rem;
+  }
+  section .recipe .recipe-list {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0.5rem 10rem;
+  }
+  section .recipe .recipe-list .recipe-item {
+    position: relative;
+    margin: .6rem .6rem;
+    border: 1px solid rgba(0, 0, 0, 0.096);
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease-in-out;
+    flex-basis: 300px;
+  }
+  section .recipe .recipe-list .recipe-item:hover {
+    transition: all 0.4s ease-in-out;
+    border: 1px solid rgba(0, 0, 0, 0.281);
+    filter: none;
+    transform: translateY(-5px);
+  }
+  section .recipe .recipe-list .recipe-item img {
+    -o-object-fit: cover;
+      object-fit: cover;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    filter: grayscale(0.3);
+    transition: all 0.4s ease-in-out;
+  }
+  section .recipe .recipe-list .recipe-item img:hover {
+    transition: all 0.4s ease-in-out;
+    filter: none;
+  }
+  section .recipe .recipe-list .recipe-item .recipe-content {
+    display: flex;
+    flex-direction: column;
+  }
+  section .recipe .recipe-list .recipe-item .recipe-content h2 {
+    padding: 0.5rem 0;
+    font-size: 1.6rem;
+  }
+  section .recipe .recipe-list .recipe-item .recipe-content p {
+    line-height: 1.6;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    overflow: hidden;
+    font-size: 1.2rem;
+    padding-right: 1rem;
+  }
+  section .recipe .recipe-list .recipe-item .recipe-btns {
+    padding: 0.6rem 0.5rem;
+    display: flex;
+    flex-direction: row;
+  }
+  section .recipe .recipe-list .recipe-item .recipe-btns .btn {
+    cursor: pointer;
+    padding-right: 2rem;
+  }
+  section .about {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background: rgb(245, 245, 245);
+    height: 60vh;
+    margin-top: 5rem;
+  }
+  section .about h1 {
+    position: relative;
+    text-align: center;
+    padding: 3rem 0;
+    font-size: 2rem;
+  }
+  section .about .content {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 3rem;
+  }
+  section .about .content .sec {
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.103);
+    margin-bottom: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 300px;
+    margin: 0 2rem;
+  }
+  section .about .content .sec:hover {
+    transition: all 0.4s ease-in-out;
+    border: 1px solid rgb(221, 221, 27);
+    transform: scale(1.05);
+  }
+  section .about .content .sec .ctrl {
+    font-size: 2rem;
+    padding: 1rem 0;
+  }
+  section .about .content .sec p {
+    text-align: center;
+    padding: .8rem 1rem;
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+  section .about .content .sec p span {
+    font-size: 1.2rem;
+    color: rgb(221, 221, 27);
+  }
 
-
-/*display for active section*/
-.active{
-  display: block !important;
+  footer {
+    position: relative;
+    height: 50vh;
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(500px, 1fr));
+  }
+  footer .top {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .top img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+      object-fit: cover;
+  }
+  footer .top .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.473);
+  }
+  footer .top .content {
+    position: relative;
+    z-index: 1;
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Dancing Script", cursive;
+  }
+  footer .top .content h1 {
+    padding: 2rem 0;
+    font-size: 4rem;
+    letter-spacing: 1rem;
+  }
+  footer .top .content .icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: space-evenly;
+  }
+  footer .top .content .icons .icon {
+    font-size: 1.8rem;
+    color: #e2e2e2;
+    padding: 0 0.5rem;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: all 0.4s ease-in-out;
+  }
+  footer .top .content .icons .icon:hover {
+    transition: all 0.4s ease-in-out;
+    color: rgb(212, 184, 20);
+  }
+  footer .bottom {
+    background-color: #262626;
+    color: rgb(173, 171, 171);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 0;
+    padding: 1rem 0;
+  }
+  footer .bottom .btm-links a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: rgb(192, 189, 189);
+    margin: 0.3rem 0.5rem;
+  }
+  footer .bottom .btm-links a:hover {
+    transition: all 0.3s ease-in-out;
+    color: rgb(228, 226, 226);
+  }
+  footer .bottom .copyright {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
 }
+  
 
-header .navlinks > .active-btn{
-  color: rgb(70, 16, 121);
-  border-bottom: 1px solid;
-}
+/*# sourceMappingURL=styles.css.map */

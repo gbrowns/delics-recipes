@@ -1,0 +1,312 @@
+@use './cdns.scss' as *; //cdn links
+@use './colors' as *; // colors
+@use './media'; //media queries
+@use './global'; //global styles
+@use './mixins' as *; //mixins
+@use './variables' as *; //variables
+
+@media screen and (min-width: $tablet) {
+    body, .banner{
+    height: auto;
+    width: 100%;
+    background-color: $white;
+    font-family: 'Oswald', sans-serif;
+    color: $black;
+    font-size: 1rem;
+    @include flex-col;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(29, 28, 28, 0.137);
+    align-items: center;
+    justify-content: space-evenly;
+    height: 10vh;
+    .menu{
+        display: none;
+        //@include set-display(none);
+        //visibility: hidden;
+    }
+    .logo{
+        span{
+            @include logo-style(2.2rem, $black);
+        }
+    }
+    .navlinks{
+        position: relative;
+        @include flex-row;
+        justify-content: space-evenly;
+        align-items: center;
+        color: rgb(224, 223, 223);
+        .close-menu{
+            @include set-display(none);
+        }
+        .links{
+            @include flex-row;
+            a{
+                text-decoration: none;
+                color: $black;
+                font-weight: bold;
+                padding: 0rem 1rem;
+                font-size: 1.2rem;
+                cursor: pointer;
+                color: rgb(224, 223, 223);
+            }
+
+        }
+        .btns{
+            @include flex-row;
+            justify-content: space-evenly;
+            align-items: center;
+            .btn{
+                padding: 0rem 1rem;
+                cursor: pointer;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+//section
+
+section{
+    position: relative;
+    width: 100%;
+    height: auto;
+    .home{
+        position: relative;
+        width: $width;
+        height: 100vh;
+        @include flex-col;
+        justify-content: center;
+        align-items: center;
+        img{
+            @include bg-attachment;
+            object-fit: cover;
+            background-clip: content-box;
+        }
+        .overlay{
+            @include bg-attachment;
+            background-color: rgba(0, 0, 0, 0.329);
+        }
+        .content{
+            position: relative;
+            z-index: 5;
+            color: $white;
+            margin: 0 1rem;
+            @include flex-col;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 3rem;
+            span{
+                font-family: 'Dancing Script', cursive;
+                font-size: 3.5rem;
+            }
+            h1{
+                font-size: 8rem;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+            p{
+                text-align: center;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    //recipe styles
+    .recipe{
+        position: relative;
+        width: 100%;
+        h1{
+            @include section-title(2rem, 2rem);
+        }
+        .recipe-list{
+            position: relative;
+            @include flex-row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding: 0.5rem 10rem;
+            .recipe-item{
+                position: relative;
+                width: calc(25% - 1.2rem);
+                margin: .6rem .5rem;
+                border: 1px solid rgba(0, 0, 0, 0.096);
+                border-radius: 5px;
+                cursor: pointer;
+                @include flex-col;
+                transition: all .4s ease-in-out;
+                &:hover{
+                    transition: all .4s ease-in-out;
+                    border: 1px solid rgba(0, 0, 0, 0.281);
+                    filter: none;
+                    transform: translateY(-5px)
+
+                }
+                img{
+                    object-fit: cover;
+                    width: 100%;
+                    border-radius: 5px 5px 0 0;
+                    filter: grayscale(.3);
+                    transition: all .4s ease-in-out;
+                    &:hover{
+                        transition: all .4s ease-in-out;
+                        filter: none;
+                            
+                    } 
+                }
+                .recipe-content{
+                    @include flex-col;
+                    h2{
+                        padding: .5rem 0;
+                        font-size: 1.6rem;
+                    }
+                    p{
+                        line-height: 1.6;
+                        height: fit-content;
+                        overflow: hidden;
+                        font-size: 1.2rem;
+                        padding-right: 1rem;
+                    }
+                }
+                .recipe-btns{
+                    padding: .6rem .5rem;
+                    @include flex-row;
+                    .btn{
+                        cursor: pointer;
+                        padding-right: 2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    //about styles
+    .about{
+        position: relative;
+        width: 100%;
+        height: auto;
+        h1{
+            @include section-title(3rem, 2rem);
+        }
+        .content{
+            position: relative;
+            width: 100%;
+            height: auto;
+            @include flex-col;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 3rem;
+            .sec{
+                position: relative;
+                border: 1px solid rgba(0, 0, 0, 0.103);
+                margin-bottom: 1rem;
+                cursor: pointer;
+                border-radius: 5px;
+                transition: all 0.4s ease-in-out;
+                 @include flex-col;
+                &:hover{
+                    transition: all 0.4s ease-in-out;
+                    border: 1px solid $theme;;
+                    transform: scale(1.05);
+                }
+                .ctrl{
+                    font-size: 1.6rem;
+                    padding: 1rem 0;
+                }
+                p{
+                    text-align: center;
+                    padding: .7rem 1rem;
+                    span{
+                        font-size: 1.2rem;
+                        color: $theme;
+                    }
+                }
+            }
+        }
+    }
+}
+
+ //footer styles
+    footer{
+        position: relative;
+        height: 50vh;
+        @include set-display(grid);
+        grid-template-rows: repeat(auto-fit, minmax(500px, 1fr));
+        .top{
+            position: relative;
+            @include flex-col;
+            justify-content: center;
+            align-items: center;
+            img{
+                @include bg-attachment;
+                object-fit: cover;
+            }
+
+            .overlay{
+                @include bg-attachment;
+                background-color: rgba(0, 0, 0, 0.308);
+            }
+            .content{
+                position: relative;
+                z-index: 1;
+                color: $theme-light;
+                @include flex-col;
+                justify-content: center;
+                align-items: center;
+                font-family: 'Dancing Script', cursive;
+                h1{
+                    padding: 1rem 0;
+                }
+                .icons{
+                    @include flex-row;
+                    justify-content: space-evenly;
+                    align-items: space-evenly;
+                    .icon{
+                        @include icon-style(.4rem, .5rem, 1.2rem);
+                        transition: all 0.4s ease-in-out;
+                        &:hover{
+                            transition: all 0.4s ease-in-out;
+                            color: rgb(212, 184, 20)
+                        }
+                    }
+                }
+            }
+        }
+        .bottom{
+            background-color: $footer-bg;
+            color: rgb(173, 171, 171);
+            @include flex-col;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 0;
+            .btm-links{
+                a{
+                    @include navlinks;
+                    font-size: 1.1rem;
+                    color: rgb(192, 189, 189);
+                    margin: .3rem .5rem;
+                    &:hover{
+                        transition: all 0.3s ease-in-out;
+                        color: rgb(228, 226, 226);
+                    }
+                }
+            }
+
+            .copyright{
+                font-size: .87rem;
+                margin-top: .5rem;
+            }
+        }
+
+    }
+ 
+}
+    
+
