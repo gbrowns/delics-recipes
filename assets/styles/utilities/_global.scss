@@ -1,0 +1,6 @@
+@use './mixins.scss' as *;
+
+// show menu
+.show-menu{
+    @include set-display(flex);
+}

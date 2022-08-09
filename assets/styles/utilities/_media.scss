@@ -2,6 +2,7 @@
 @use './variables' as *;
 @use './colors' as *;
 @use 'mixins' as *;
+//@use './global';
 //large mobile
 @media screen and (max-width: $lg-mobile){
     body, .banner{
@@ -10,6 +11,17 @@
         display: flex;
         flex-direction: column;
         @include flex-col;
+    }
+    // show menu
+    .show-menu{
+        display: flex !important;
+        transition: all 0.4s ease-in-out;
+    }
+
+    .dark-nav{
+        background-color: rgba(29, 28, 28, 0.815);
+        color: rgb(206, 204, 204);
+        
     }
 
     header{
@@ -20,7 +32,7 @@
         z-index: 10;
         display: flex;
         flex-direction: row;
-        background-color: rgba(29, 28, 28, 0.288);
+        background-color: rgba(29, 28, 28, 0.137);
         align-items: center;
         justify-content: center;
         height: 10vh;
@@ -53,14 +65,15 @@
             width: $width;
             border-radius: 0px 0px 5px 5px;
             box-shadow: 0 1px 10px rgba(0, 0, 0, 0.253);
-            .ctrl{
+            transition: all 0.4s ease-in-out;
+            .close-menu{
                 border: 1px solid rgba(0, 0, 0, 0.507);
                 position: relative;
                 right: 0;
                 top: 0;
                 padding: 1rem 0;
                 font-size: 1.3rem;
-                text-align: right;
+                text-align: center;
                 cursor: pointer;
             }
             .links{

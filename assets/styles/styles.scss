@@ -1,7 +1,7 @@
 @use './utilities/cdns.scss' as *;
 @use './utilities/colors' as *;
 @use './utilities/media';
-
+@use './utilities/global';
 
 *{
     padding: 0;
