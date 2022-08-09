@@ -5,9 +5,11 @@
 //large mobile
 @media screen and (max-width: $lg-mobile){
     body, .banner{
-        width: $width;
+        width: 100%;
+        height: auto;
         display: flex;
         flex-direction: column;
+        @include flex-col;
     }
 
     header{
@@ -96,12 +98,12 @@
     //section styles
     section{
         position: relative;
-        width: $width;
-        height: 100vh;
+        width: 100%;
+        height: auto;
         .home{
             position: relative;
             width: $width;
-            height: 100%;
+            height: 70vh;
             @include flex-col;
             justify-content: center;
             align-items: center;
@@ -137,12 +139,77 @@
                 }
             }
         }
+
+        //recipes section
+        .recipe{
+            position: relative;
+            width: 100%;
+            h1{
+                text-align: center;
+                padding: 1.5rem 0;
+            }
+            .recipe-list{
+                position: relative;
+                @include flex-row;
+                flex-wrap: wrap;
+                .recipe-item{
+                    position: relative;
+                    width: calc(50% - 1.2rem);
+                    margin: .6rem .5rem;
+                    border: 1px solid rgba(0, 0, 0, 0.103);
+                    border-radius: 5px;
+                    cursor: pointer;
+                    @include flex-col;
+                    transition: all .4s ease-in-out;
+                    &:hover{
+                        transition: all .4s ease-in-out;
+                        border: 1px solid rgba(0, 0, 0, 0.281);
+                        filter: none;
+                        transform: translateY(-5px)
+
+                    }
+                    img{
+                        object-fit: cover;
+                        width: 100%;
+                        border-radius: 5px 5px 0 0;
+                        filter: grayscale(.3);
+                        transition: all .4s ease-in-out;
+                        &:hover{
+                            transition: all .4s ease-in-out;
+                            filter: none;
+                            
+                        }
+                    }
+                    .recipe-content{
+                        @include flex-col;
+                        h2{
+                            padding: .2rem 0;
+                            font-size: 1.2rem;
+                        }
+                        p{
+                            line-height: 1.6;
+                            height: fit-content;
+                            overflow: hidden
+
+                        }
+                    }
+                    .recipe-btns{
+                        @include flex-row;
+                        padding: .8rem 0;
+                        justify-content: center;
+                        .btn{
+                            cursor: pointer;
+                            padding-right: 2rem;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     //footer styles
     footer{
         position: relative;
-        border: 1px solid;
         @include set-display(grid);
         grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
         .top{
