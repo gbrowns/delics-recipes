@@ -17,6 +17,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="./assets/styles/styles.css">
     <title>Recipe Website</title>
+
 <body>
     <div class="banner">
         <!--navigation bar-->
@@ -44,7 +45,7 @@
                     </div>
                 </div>
             </div>
-            <div class="menu" >
+            <div class="menu">
                 <i class="fa fa-bars ctrl open-menu" id="menu" d></i>
             </div>
         </header>
@@ -59,17 +60,160 @@
                 <div class="content">
                     <span>Get ready to</span>
                     <h1>Spice it Up</h1>
-                    <p>Get the best and latest editions of the new recipes in the market.Latest editions of the new recipes in the market
+                    <p>Get the best and latest editions of the new recipes in the market.Latest editions of the new
+                        recipes in the market
 
                     </p>
                 </div>
-               
+
             </div>
+            <!-- /Favorite, Create New -->
+            <div class="container">
+                <div class="close-sidebar">
+                    <i class="fa-solid fa-xmark ctrl"></i>
+                </div>
+                <div class="controls">
+                    <div class="btn fav">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Favorite</span>
+                    </div>
+                    <div class="btn add">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Create New Recipe</span>
+                    </div>
+                </div>
+                <div class="cont-body">
+                    <div class="fav">
+                        <h1>Favorite Recipes</h1>
+                        <div class="lists">
+                            <div class="list-item">
+                                <h2>Spicy Chicken</h2>
+                                <p>
+                                    Get the best and latest editions of the new recipes in the market.Latest editions of
+                                    the new recipes in the
+                                    market. Get the best and latest editions of the new recipes in the market.Latest
+                                    editions of the new recipes in the
+                                    market.
+                                </p>
+                                <div class="ctrls">
+                                    <span>Author's name</span>
+                                    <span>Date</span>
+                                    <div class="ctrl">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="list-item">
+                                <h2>Spicy Chicken</h2>
+                                <p>
+                                    Get the best and latest editions of the new recipes in the market.Latest editions of
+                                    the new recipes in the
+                                    market. Get the best and latest editions of the new recipes in the market.Latest
+                                    editions of the new recipes in
+                                    the
+                                    market.
+                                </p>
+                                <div class="ctrls">
+                                    <span>Author's name</span>
+                                    <span>Date</span>
+                                    <div class="ctrl">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="list-item">
+                                <h2>Spicy Chicken</h2>
+                                <p>
+                                    Get the best and latest editions of the new recipes in the market.Latest editions of
+                                    the new recipes in the
+                                    market
+                                </p>
+                                <div class="ctrls">
+                                    <span>Author's name</span>
+                                    <span>Date</span>
+                                    <div class="ctrl">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="new">
+                        <h1>Create New Recipe</h1>
+                        <form action="" method="post" autocomplete="off">
+                            <div class="form-group">
+                                <label for="">Recipe Title</label>
+                                <input type="text" name="recipe_name" id="recipe_name" class="form-control"
+                                    placeholder="Title">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Recipe Description</label>
+                                <textarea name="recipe_description" id="recipe_description" cols="30" rows="10"
+                                    class="form-control" placeholder="Description"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Recipe Image</label>
+                                <input type="file" name="recipe_image" id="recipe_image" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Recipe Ingredients</label>
+                                <textarea name="recipe_ingredients" id="recipe_ingredients" cols="30" rows="10"
+                                    class="form-control" placeholder="Ingredients"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Recipe Directions</label>
+                                <textarea name="recipe_directions" id="recipe_directions" cols="30" rows="10"
+                                    class="form-control" placeholder="Recipe directions"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Recipe Category</label>
+                                <select name="recipe_category" id="recipe_category" class="form-control">
+                                    <option value="">Select Category</option>
+                                    <option value="">Breakfast</option>
+                                    <option value="">Lunch</option>
+                                    <option value="">Dinner</option>
+                                    <option value="">Dessert</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Recipe Author</label>
+                                <input type="text" name="recipe_author" id="recipe_author" class="form-control"
+                                    placeholder="Recipe Author">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Create">
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <!--Recipe section page-->
             <div class="recipe">
                 <h1>Find Recipes</h1>
                 <div class="search-area">
                     <div class="search">
-                        <input type="text" name="search" id="search" placeholder="Search For Any Recipe" autocomplete="off">
+                        <input type="text" name="search" id="search" placeholder="Search For Any Recipe"
+                            autocomplete="off">
                         <button type="submit" id="search-btn">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
@@ -81,14 +225,15 @@
                         <img src="./assets/images/bg-img1.jpg" alt="recipe1" width="200px">
                         <div class="recipe-content">
                             <h2>Delicious Recipe</h2>
-                            <p>A recipe is a set of instructions that describes how to prepare or make something, especially a dish of prepared food.</p>
+                            <p>A recipe is a set of instructions that describes how to prepare or make something,
+                                especially a dish of prepared food.</p>
                             <div class="recipe-btns">
                                 <div class="btn">
                                     <i class="fa-solid fa-heart"></i>
-                                   
+
                                 </div>
                                 <div class="btn">
-                                
+
                                     <span>Read More</span>
                                 </div>
                             </div>
@@ -98,15 +243,16 @@
                         <img src="./assets/images/bg-img1.jpg" alt="recipe1" width="200px">
                         <div class="recipe-content">
                             <h2>Delicious Recipe</h2>
-                            <p>A recipe is a set of instructions that describes how to prepare or make something, especially a dish of
+                            <p>A recipe is a set of instructions that describes how to prepare or make something,
+                                especially a dish of
                                 prepared food.</p>
                             <div class="recipe-btns">
                                 <div class="btn">
                                     <i class="fa-solid fa-heart"></i>
-                    
+
                                 </div>
                                 <div class="btn">
-                    
+
                                     <span>Read More</span>
                                 </div>
                             </div>
@@ -116,15 +262,16 @@
                         <img src="./assets/images/bg-img1.jpg" alt="recipe1" width="200px">
                         <div class="recipe-content">
                             <h2>Delicious Recipe</h2>
-                            <p>A recipe is a set of instructions that describes how to prepare or make something, especially a dish of
+                            <p>A recipe is a set of instructions that describes how to prepare or make something,
+                                especially a dish of
                                 prepared food.</p>
                             <div class="recipe-btns">
                                 <div class="btn">
                                     <i class="fa-solid fa-heart"></i>
-                    
+
                                 </div>
                                 <div class="btn">
-                    
+
                                     <span>Read More</span>
                                 </div>
                             </div>
@@ -134,15 +281,16 @@
                         <img src="./assets/images/bg-img1.jpg" alt="recipe1" width="200px">
                         <div class="recipe-content">
                             <h2>Delicious Recipe</h2>
-                            <p>A recipe is a set of instructions that describes how to prepare or make something, especially a dish of
+                            <p>A recipe is a set of instructions that describes how to prepare or make something,
+                                especially a dish of
                                 prepared food.</p>
                             <div class="recipe-btns">
                                 <div class="btn">
                                     <i class="fa-solid fa-heart"></i>
-                    
+
                                 </div>
                                 <div class="btn">
-                    
+
                                     <span>Read More</span>
                                 </div>
                             </div>
@@ -152,15 +300,16 @@
                         <img src="./assets/images/bg-img1.jpg" alt="recipe1" width="200px">
                         <div class="recipe-content">
                             <h2>Delicious Recipe</h2>
-                            <p>A recipe is a set of instructions that describes how to prepare or make something, especially a dish of
+                            <p>A recipe is a set of instructions that describes how to prepare or make something,
+                                especially a dish of
                                 prepared food.</p>
                             <div class="recipe-btns">
                                 <div class="btn">
                                     <i class="fa-solid fa-heart"></i>
-                    
+
                                 </div>
                                 <div class="btn">
-                    
+
                                     <span>Read More</span>
                                 </div>
                             </div>
@@ -170,22 +319,23 @@
                         <img src="./assets/images/bg-img1.jpg" alt="recipe1" width="200px">
                         <div class="recipe-content">
                             <h2>Delicious Recipe</h2>
-                            <p>A recipe is a set of instructions that describes how to prepare or make something, especially a dish of
+                            <p>A recipe is a set of instructions that describes how to prepare or make something,
+                                especially a dish of
                                 prepared food.</p>
                             <div class="recipe-btns">
                                 <div class="btn">
                                     <i class="fa-solid fa-heart"></i>
-                    
+
                                 </div>
                                 <div class="btn">
-                    
+
                                     <span>Read More</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                   
-                
+
+
                 </div>
 
             </div>
@@ -195,21 +345,24 @@
                     <div class="sec">
                         <i class="fa-solid fa-utensils ctrl"></i>
                         <p>
-                            <span>True Delics</span> is a recipe website that provides the latest and best recipes for you to enjoy.
+                            <span>True Delics</span> is a recipe website that provides the latest and best recipes for
+                            you to enjoy.
                             We are a team of passionate chefs who love to create delicious recipes for you.
                         </p>
                     </div>
                     <div class="sec">
                         <i class="fa-solid fa-utensils ctrl"></i>
                         <p>
-                            <span>True Delics</span> is a recipe website that provides the latest and best recipes for you to enjoy.
+                            <span>True Delics</span> is a recipe website that provides the latest and best recipes for
+                            you to enjoy.
                             We are a team of passionate chefs who love to create delicious recipes for you.
                         </p>
                     </div>
                     <div class="sec">
                         <i class="fa-solid fa-leaf ctrl"></i>
                         <p>
-                            <span>True Delics</span> is a recipe website that provides the latest and best recipes for you to enjoy.
+                            <span>True Delics</span> is a recipe website that provides the latest and best recipes for
+                            you to enjoy.
                             We are a team of passionate chefs who love to create delicious recipes for you.
                         </p>
                     </div>
@@ -246,11 +399,14 @@
                 <div class="copyright">
                     <span>&copy;True Delics 2022 | <i>made by Brown</i></span>
                 </div>
+                <div class="text-box">
+                    <i class="fa-solid fa-message"></i>
+                </div>
             </div>
         </footer>
     </div>
 
-    <script src="./src/app.js" ></script>
+    <script src="./src/app.js"></script>
 </body>
 
 </html>
