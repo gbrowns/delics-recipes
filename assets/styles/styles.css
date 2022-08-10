@@ -643,6 +643,9 @@
   display: flex !important;
   transition: all 0.4s ease-in-out;
 }
+.active-section{
+  background-color: #e6e6e6;
+}
 
 .dark-nav {
   background-color: rgba(29, 28, 28, 0.815);

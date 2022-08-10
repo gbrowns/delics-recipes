@@ -33,18 +33,24 @@
         //open sidebar
         document.querySelectorAll(".open-sidebar").forEach((btn, i) => {
             btn.addEventListener("click", () => {
+
+                document.querySelector(".container").classList.add("show-menu");
                 if (i === 0) {
                     //favorite recipes
                     console.log("favorite");
-                    document.querySelector(".container").classList.add("show-menu");
                     document.querySelector(".fav").classList.add("show-menu");
+                    document.querySelector(".controls > .favorite").classList.add("active-section");
                     document.querySelector(".new").classList.remove("show-menu");
-                } else {
+                    document.querySelector(".controls > .create").classList.remove("active-section");
+                }
+                
+                if (i === 1) {
                     //create recipe
                     console.log("create");
-                    document.querySelector(".container").classList.add("show-menu");
                     document.querySelector(".new").classList.add("show-menu");
+                    document.querySelector(".controls > .create").classList.add("active-section");
                     document.querySelector(".fav").classList.remove("show-menu");
+                    document.querySelector(".controls > .favorite").classList.remove("active-section");
                 }
             });
         });
