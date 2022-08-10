@@ -164,6 +164,7 @@
     text-align: center;
     font-size: 1.2rem !important;
   }
+  
   section .recipe {
     position: relative;
     width: 100%;
@@ -561,7 +562,7 @@ body, .banner {
     background-color: #fff;
     padding: .6rem;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.233);
-    display: flex;
+    display: none;
     flex-direction: column;
   }
   section .container .close-sidebar{
@@ -954,7 +955,7 @@ body, .banner {
   footer .top .content h1 {
     padding: 2rem 0;
     font-size: 4rem;
-    letter-spacing: 1rem;
+    letter-spacing: .5rem;
   }
   footer .top .content .icons {
     display: flex;
@@ -963,11 +964,11 @@ body, .banner {
     align-items: space-evenly;
   }
   footer .top .content .icons .icon {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: #e2e2e2;
     padding: 0 0.5rem;
     cursor: pointer;
-    margin-left: 1rem;
+    margin-left: 1.3rem;
     transition: all 0.4s ease-in-out;
   }
   footer .top .content .icons .icon:hover {
@@ -998,6 +999,39 @@ body, .banner {
     font-size: 1rem;
     margin-top: 0.5rem;
   }
+  footer .bottom .text-box{
+    position: absolute;
+    bottom: -10%;
+    right: 5%;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgb(211, 211, 35);
+    color: #000;
+    transition: all 0.4s ease-in-out;
+  }
+  footer .bottom .text-box:hover::after{
+    content: "Contact developer";
+    position: absolute;
+    top: -40%;
+    left: -30%;
+    font-size: .8rem;
+    width: 100px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.432);
+    color: #fff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease-in-out;
+  }
+  
 }
   
 
