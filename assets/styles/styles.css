@@ -568,7 +568,6 @@ body, .banner {
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
-    border: 1px solid #ccc;
   }
   section .recipe .search-area .search{
     position: relative;
