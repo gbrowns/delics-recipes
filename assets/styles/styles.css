@@ -175,7 +175,7 @@
     background-color: #fff;
     padding: .6rem;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.233);
-    display: flex;
+    display: none;
     flex-direction: column;
   }
   section .container .close-sidebar{
@@ -293,7 +293,7 @@
     margin: 0 1rem;
   }
   section .container .cont-body .new{
-    display: flex;
+    display: none;
     position: relative;
     flex-direction: column;
     justify-content: flex-start;
