@@ -127,6 +127,14 @@ section{
         h1{
             @include section-title(2rem, 2rem);
         }
+        .search{
+            position: relative;
+            width: 100%;
+            @include flex-row;
+            justify-content: space-evenly;
+            align-items: center;
+            border: 1px solid;
+        }
         .recipe-list{
             position: relative;
             @include flex-row;
